@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频发布页(学校)</title>
+    <style>
+        .watermark {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-family: 'Orbitron', sans-serif;
+            color: #64ffda;
+            font-size: 16px;
+            z-index: 9999;
+            text-shadow: 0 0 5px #64ffda;
+            opacity: 0.8;
+            letter-spacing: 2px;
+            pointer-events: none; /* 防止文字影响页面交互 */
+            animation: glow 2 ease-in-out infinite alternate;
+        }
+
+        @media (max-width: 1200px) {
+                        .video-preview iframe {
+                            width: 100%;
+                            height: calc(100vw * 0.5);
+                        }
+                    }
+    </style>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ryokuryuneko</h1>
+        <p>You Only Live Once.</p>
+    </header>
+    <div class="container">
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-preview">
+                    <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=115308144627616&bvid=BV1SPHGz9Ew6&cid=32806930364&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="1200" height="600"></iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">攻防战【景汇中学】（攻方）</h3>
+                    <p class="video-description">BV1SPHGz9Ew6</p>
+                    <a href="https://www.bilibili.com/video/BV1SPHGz9Ew6/" class="btn">观看视频</a>
+                </div>
+            </div>
+        </div>
+            </div>
+            <div class="video-card">
+                <div class="video-preview">
+                    <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=115308144627616&bvid=BV1SPHGz9Ew6&cid=32806930364&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="1200" height="600"></iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">攻防战【景汇中学】（守方）</h3>
+                    <p class="video-description">BV1SPHGz9Ew6</p>
+                    <a href="https://www.bilibili.com/video/BV1SPHGz9Ew6/" class="btn">观看视频</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="watermark">Ryokuryuneko</div>
+
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <video controls class="video-player"></video>
+        </div>
+    </div>
+    <!-- 引入独立的 JS 文件 -->
+    <script src="js/script.js"></script>
+    <script>
+        // 在 js/script.js 中添加以下逻辑，或者直接在页面内添加
+        document.addEventListener('DOMContentLoaded', function() {
+            const openModalButtons = document.querySelectorAll('.open-modal');
+            const modal = document.querySelector('.modal');
+            const closeBtn = document.querySelector('.close-btn');
+    
+            openModalButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.classList.add('active');
+                });
+            });
+    
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('active');
+            });
+    
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
