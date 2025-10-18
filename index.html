@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryokuryuneko视频发布页(in学校)</title>
+    <title>视频发布页(在学校)-Ryokuryuneko</title>
     <style>
         .watermark {
             position: fixed;
@@ -26,6 +26,7 @@
                             height: calc(100vw * 0.5);
                         }
                     }
+
     </style>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -47,7 +48,7 @@
                 </div>
             </div>
         </div>
-            </div>
+        <div class="video-grid">
             <div class="video-card">
                 <div class="video-preview">
                     <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=115308144627616&bvid=BV1SPHGz9Ew6&cid=32806930364&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="1200" height="600"></iframe>
@@ -68,10 +69,8 @@
             <video controls class="video-player"></video>
         </div>
     </div>
-    <!-- 引入独立的 JS 文件 -->
     <script src="js/script.js"></script>
     <script>
-        // 在 js/script.js 中添加以下逻辑，或者直接在页面内添加
         document.addEventListener('DOMContentLoaded', function() {
             const openModalButtons = document.querySelectorAll('.open-modal');
             const modal = document.querySelector('.modal');
@@ -96,5 +95,4 @@
         });
     </script>
 </body>
-
 </html>
